@@ -1,0 +1,45 @@
+<div class="columns">
+  <div class="column">
+    <h6 style="text-align:center;">
+      <b style="font-size: 70px;"> Jeux Des Dés </b>
+    </h6>
+  </div>
+</div>
+
+<!--Apparition des Dés quand active le bouton Jouer a nouveau-->
+<div >
+
+  <img *ngIf="test" src={{diceList[random]}} />
+  <img *ngIf="test1" src={{diceList[random1]}} />
+  <img *ngIf="test2" src={{diceList[random2]}} />
+
+</div>
+
+<!-- additionner les 3 Dés -->
+<div style="font-size: 30px;">
+  <p style="text-align:center;">Pointage Des 3 Dés : {{pTotal}} points</p>
+</div>
+
+<!-- Bonus 10pts si les 3 dés sont identique et 5 bonus si 2 dés sont identiques -->
+<div style="font-size: 30px;"><p style="text-align:center;">Bonus : {{bTotal}} points</p></div>
+
+<!-- additionner les 3 Dés et le bonus si il y a -->
+<div style="font-size: 30px;">
+  <p style="text-align:center;">Total avec Bonus : {{aTotal}} points</p>
+</div>
+
+<div style="font-size: 30px;">
+  <p style="text-align:center;">Pointage Cumulatif : {{total}} points</p>
+</div>
+
+
+<br />
+
+<div style="text-align:center;">
+  <!-- Bouton Jouer de nouveau -->
+
+  <button (click)="reload()">Jouer à Nouveau</button> <br /><br />
+
+  <!-- Bouton Réinitialiser le Pointage -->
+  <button (click)="reset()">Réinitialiser Pointage</button>
+</div>
